@@ -27,7 +27,7 @@ jobs:
           Host target
             HostName $SSH_HOST
             User $SSH_USER
-            IdentifyFile ~/.ssh/github
+            IdentityFile ~/.ssh/github
             LogLevel ERROR
             StrictHostKeyChecking no
           END
