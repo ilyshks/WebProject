@@ -35,4 +35,4 @@ jobs:
           END
       - name: Run deploy
         run: |
-          ssh target "cd project/WebProject/ && docker compose down && git pull && docker compose up --build"
+          ssh target "cd project/WebProject/ && docker compose down && git pull && docker compose build && docker compose up -d --force-recreate"
