@@ -18,6 +18,7 @@ jobs:
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           SSH_HOST: ${{ secrets.SSH_HOST }}
+          SSH_PORT: ${{ secrets.SSH_PORT }}
           SSH_USER: ${{ secrets.SSH_USER }}
         run: |
           mkdir -p ~/.ssh/
@@ -26,6 +27,7 @@ jobs:
           cat >>~/.ssh/config <<END
           Host target
             HostName $SSH_HOST
+            Port $SSH_PORT
             User $SSH_USER
             IdentityFile ~/.ssh/github
             LogLevel ERROR
